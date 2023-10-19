@@ -14,8 +14,6 @@ router.post("/register", async (req, res) => {
 
 		res.cookie("token", token, { httpOnly: true });
 		res.redirect("/");
-
-		res.redirect("/users/login");
 	} catch (error) {
 		const errorMessages = extractErrorMessages(error);
 		res.status(404).render("user/register", { errorMessages });
